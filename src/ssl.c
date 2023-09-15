@@ -64,8 +64,8 @@ status ssl_connect(connection *c, char *host) {
 }
 
 status ssl_close(connection *c) {
-    SSL_shutdown(c->ssl);
     SSL_clear(c->ssl);
+    SSL_shutdown(c->ssl);
     return OK;
 }
 
